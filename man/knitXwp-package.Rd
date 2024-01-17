@@ -12,7 +12,7 @@ Package: \tab knitXwp\cr
 Version: \tab 0.1.2\cr
 License: \tab BSD\cr
 Imports: \tab RWordpress,XMLRPC,rmarkdown,markdown\cr
-Remotes: \tab duncantl/RWordPress,duncantl/XMLRPC
+Remotes: \tab duncantl/RWordPress,duncantl/XMLRPC\cr
 Built: \tab R 4.2.0;2024-01-17 13:29:36 UTC;unix\cr
 }
 
