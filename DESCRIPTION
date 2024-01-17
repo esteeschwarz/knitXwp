@@ -3,7 +3,7 @@ Type: Package
 Title: knit & publish post to Wordpress
 Version: 0.1.1
 Author: esteeschwarz
-Maintainer: <yourself@somewhere.net
+Maintainer: esteeschwarz <yourself@somewhere.net>
 Description: Knitting and posting .Rmd files to Wordpress self hosted blogs.
 License: BSD
 Encoding: UTF-8
