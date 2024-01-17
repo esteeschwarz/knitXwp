@@ -11,8 +11,9 @@ This is a package that converts .Rmd files to .html and post to Wordpress.org bl
 Package: \tab knitXwp\cr
 Version: \tab 0.1.2\cr
 License: \tab BSD\cr
-Imports: \tab RWordpress; rmarkdown; markdown\cr
-Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
+Imports: \tab RWordpress,XMLRPC,rmarkdown,markdown\cr
+Remotes: \tab duncantl/RWordPress,duncantl/XMLRPC
+Built: \tab R 4.2.0;2024-01-17 13:29:36 UTC;unix\cr
 }
 
 This is a tiny function library which solves a small rendering problem of
