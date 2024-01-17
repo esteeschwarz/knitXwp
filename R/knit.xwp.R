@@ -1,11 +1,14 @@
+library("rmarkdown")
+library("RWordPress")
+library("markdown")
+
 knit.xwp<-function (input, title = "A post from knitr", ..., envir = parent.frame(),
           shortcode = FALSE, action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
 {
 #  do.call("library", list(package = "RWordPress", character.only = TRUE))
- # do.call("library", list(package = "rmarkdown", character.only = TRUE))
-  library("RWordPress")
-  library("rmarkdown")
+#  do.call("library", list(package = "rmarkdown", character.only = TRUE))
+  # library("rmarkdown")
   # xfun::do_once(warning2("This function is based on the RWordPress package, which is no longer actively ",
   #                        "maintained (https://github.com/yihui/knitr/issues/1866). For blogging with R, ",
   #                        "you may try the blogdown package instead."), "knitr.knit2wp.warning")
