@@ -2,7 +2,7 @@ library("rmarkdown")
 library("RWordPress")
 library("markdown")
 
-knit.xwp<-function (input, title = "A post from knitr", ..., envir = parent.frame(),
+knit_xwp<-function (input, title = "A post from knitr", ..., envir = parent.frame(),
           shortcode = FALSE, action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
 {

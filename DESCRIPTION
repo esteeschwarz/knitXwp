@@ -1,4 +1,4 @@
-Package: knit.xwp
+Package: knitXwp
 Type: Package
 Title: knit & publish post to Wordpress
 Version: 0.1.1

@@ -1,6 +1,6 @@
-\name{knit.xwp-package}
-\alias{knit.xwp-package}
-\alias{knit.xwp}
+\name{knitXwp-package}
+\alias{knitXwp-package}
+\alias{knitXwp}
 \docType{package}
 \title{Knit .Rmd to Wordpress blogs}
 \description{
@@ -8,10 +8,10 @@ This is a package that converts .Rmd files to .html and post to Wordpress.org bl
 }
 \details{
 \tabular{ll}{
-Package: \tab knit.xwp\cr
+Package: \tab knitXwp\cr
 Version: \tab 0.1-0\cr
 License: \tab BSD\cr
-Imports: \tab RWordpress; rmarkdown\cr
+Imports: \tab RWordpress; rmarkdown; markdown\cr
 Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
 }
 

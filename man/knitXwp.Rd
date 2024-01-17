@@ -1,5 +1,5 @@
-\name{knit.xwp}
-\alias{knit.xwp}
+\name{knitXwp}
+\alias{knitXwp}
 
 \title{knit & post function}
 \description{
@@ -8,7 +8,7 @@
    The functions to specify (adress) where to post are documented in the \code{RWordPress} package.
  }
  \usage{
-knit.xwp(input, title = "A post from knitr", ..., envir = parent.frame(),
+knit_xwp(input, title = "A post from knitr", ..., envir = parent.frame(),
           shortcode = FALSE, action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
 

@@ -1,7 +1,8 @@
 import(XMLRPC)
 import(methods)
 import(rmarkdown)
+import(markdown)
 import(RWordPress)
 exportPattern("^[[:alpha:]]+")
 
-export(knit.xwp)
+export(knitXwp)
