@@ -29,16 +29,18 @@ options(WordpressLogin = c(c(username='userpassword')),
 library(knitXwp)
 
 # define postID
-pid<-2108
+pid<-0 # you have to know the id unless you want to create a new post
 
 # define .Rmd filename. its good to have the working directory
 # be be the one where this file is stored
-rmd<-"wp001.Rmd"
+rmd<-"yourfile.Rmd"
 
 # call the function
-knit_xwp(rmd,action = "editPost",categories = c("rR","snc"),
-          mt_keywords=c("snc","package"),
-          publish = F,
+# if you want to create a new post, leave postid out
+# adapt categories and keywords
+knit_xwp(rmd,action = "editPost",categories = c("cat1","cat2"),
+          mt_keywords=c("tag1","tag2"),
+          publish = T,
           postid = pid)
 ```
 
