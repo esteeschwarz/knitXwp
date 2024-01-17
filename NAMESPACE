@@ -5,4 +5,4 @@ import(markdown)
 import(RWordPress)
 exportPattern("^[[:alpha:]]+")
 
-export(knitXwp)
+export(knit_xwp)
