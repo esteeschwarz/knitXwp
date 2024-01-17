@@ -9,7 +9,7 @@ This is a package that converts .Rmd files to .html and post to Wordpress.org bl
 \details{
 \tabular{ll}{
 Package: \tab knitXwp\cr
-Version: \tab 0.1.3\cr
+Version: \tab 0.1.4\cr
 License: \tab BSD\cr
 Imports: \tab RWordpress,XMLRPC,rmarkdown,markdown\cr
 Remotes: \tab duncantl/RWordPress,duncantl/XMLRPC\cr
