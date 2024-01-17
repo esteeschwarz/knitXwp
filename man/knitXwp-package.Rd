@@ -26,7 +26,7 @@ self-hosted wordpress blog.
 You have to have the library \code{RWordPress} installed, e.g. with:
 \code{devtools::install_github(c("duncantl/XMLRPC", "duncantl/RWordPress"))
 } to be able use the function.
-
+}
 \author{
 esteeschwarz
 }
