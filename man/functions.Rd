@@ -22,7 +22,7 @@ knit_xwp(input, title = "A post from R", ..., envir = parent.frame(),
  \item{postid}{the id of the page or post of interest. if not specified and \code{action="newPost"},
  a new post with new ID will be created, which you can use, when you edit the post later.}
  \item{action}{the name of the operation/method. these are the names of the relevant RWordPress functions
- \code\link{newPost}, \code\link{editPost}, \code\link{newPage()} which are called accordingly}
+ \code{\link{newPost}}, \code{\link{editPost}}, \code{\link{newPage()}} which are called accordingly}
  \item{appID}{here you can set a reference}
  \item{publish}{wether to publish(default=TRUE) or not publish the post}
 

@@ -7,7 +7,7 @@ Maintainer: esteeschwarz <yourself@somewhere.net>
 Description: Knitting and posting .Rmd files to Wordpress self hosted blogs.
 License: BSD
 Imports: 
-   RWordpress,XMLRPC,rmarkdown,markdown
+   RWordPress,XMLRPC,rmarkdown,markdown
 Remotes:
    duncantl/RWordPress,duncantl/XMLRPC
 Encoding: UTF-8
