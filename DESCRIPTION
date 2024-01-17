@@ -9,7 +9,6 @@ License: BSD
 Imports: 
    RWordpress,XMLRPC,rmarkdown,markdown
 Remotes:
-   duncantl/RWordPress
-   duncantl/XMLRPC
+   duncantl/RWordPress,duncantl/XMLRPC
 Encoding: UTF-8
 LazyData: true
