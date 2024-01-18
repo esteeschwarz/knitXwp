@@ -2,6 +2,9 @@ library("rmarkdown")
 library("RWordPress")
 library("markdown")
 
+options(WordpressLogin = c(c(username='password')),
+        WordpressURL = 'https://example.com/xmlrpc.php')
+
 knit_xwp<-function (input, title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
@@ -30,7 +33,7 @@ knit_xwp<-function (input, title = "A post from R", ...,
   title = enc2utf8(title)
   action = match.arg(action)
   WPargs = list(content = list(description = content, title = title,
-                               ...), appID = appID, publish = publish)
+                               ...), appID = "RStudio", publish = publish)
   if (action == "editPost")
     WPargs = c(postid = postid, WPargs)
   do.call(action, args = WPargs)
