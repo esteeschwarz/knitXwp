@@ -35,7 +35,7 @@ Yihui Xie, Duncan T. Lang
 }
 \keyword{ package }
 \seealso{
-\pkg{XMLRPC, RWordPress, knitr} packages
+\code{XMLRPC, RWordPress, knitr} packages
 }
 \examples{
 
