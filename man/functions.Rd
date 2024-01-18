@@ -11,7 +11,7 @@ options(WordpressLogin = c(c(username='password')),
         WordpressURL = 'https://yourwordpress.blog/xmlrpc.php')
 knit_xwp(input, title = "A post from R", ..., envir = parent.frame(),
           shortcode = FALSE, action = c("newPost", "editPost", "newPage"),
-          postid, appID = "RStudio" publish = TRUE)
+          postid, appID = "RStudio", publish = TRUE)
 }
  \arguments{
  \item{input}{the filename of the .Rmd input file}
