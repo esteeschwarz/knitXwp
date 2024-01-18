@@ -16,7 +16,7 @@ Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
 }
 
 This is a tiny function library which solves a small rendering issue of
-the \link{knit2wp} function included in the package \pkg{knitr} by Yihui Xie
+the \code{\link{knit2wp}} function included in the package \pkg{knitr} by Yihui Xie
 \url{https://yihui.org/knitr/}
 and depends on the yet not maintained, but working functions of \pkg{RWordPress} by
 Duncan T. Lang which publish the data via the wordpress rest-API of a

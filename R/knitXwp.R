@@ -2,8 +2,8 @@ library("rmarkdown")
 library("RWordPress")
 library("markdown")
 
-knit_xwp<-function (input, title = "A post from knitr", ..., envir = parent.frame(),
-          shortcode = FALSE, action = c("newPost", "editPost", "newPage"),
+knit_xwp<-function (input, title = "A post from R", ...,
+          action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
 {
 #  do.call("library", list(package = "RWordPress", character.only = TRUE))
@@ -24,15 +24,15 @@ knit_xwp<-function (input, title = "A post from knitr", ..., envir = parent.fram
   #on.exit(unlink(out))
 #  content = file_string(out)
   #content = mark(text = out)
-  shortcode = rep(shortcode, length.out = 2L)
-  if (shortcode[1])
-    content = gsub("<pre><code class=\"([[:alpha:]]+)\">(.+?)</code></pre>",
-                   "[sourcecode language=\"\\1\"]\\2[/sourcecode]",
-                   content)
-  content = gsub("<pre><code( class=\"no-highlight\"|)>(.+?)</code></pre>",
-                 if (shortcode[2])
-                   "[sourcecode]\\2[/sourcecode]"
-                 else "<pre>\\2</pre>", content)
+  # shortcode = rep(shortcode, length.out = 2L)
+  # if (shortcode[1])
+  #   content = gsub("<pre><code class=\"([[:alpha:]]+)\">(.+?)</code></pre>",
+  #                  "[sourcecode language=\"\\1\"]\\2[/sourcecode]",
+  #                  content)
+  # content = gsub("<pre><code( class=\"no-highlight\"|)>(.+?)</code></pre>",
+  #                if (shortcode[2])
+  #                  "[sourcecode]\\2[/sourcecode]"
+  #                else "<pre>\\2</pre>", content)
   content = enc2utf8(content)
   title = enc2utf8(title)
   action = match.arg(action)

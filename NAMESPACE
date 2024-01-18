@@ -1,5 +1,4 @@
 import(XMLRPC)
-import(methods)
 import(rmarkdown)
 import(markdown)
 import(RWordPress)
