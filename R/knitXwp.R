@@ -6,15 +6,8 @@ knit_xwp<-function (input, title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
           postid, publish = TRUE)
 {
-#  do.call("library", list(package = "RWordPress", character.only = TRUE))
-#  do.call("library", list(package = "rmarkdown", character.only = TRUE))
-  # library("rmarkdown")
-  # xfun::do_once(warning2("This function is based on the RWordPress package, which is no longer actively ",
-  #                        "maintained (https://github.com/yihui/knitr/issues/1866). For blogging with R, ",
-  #                        "you may try the blogdown package instead."), "knitr.knit2wp.warning")
   rmd<-input
   render(rmd)
-  #getwd()
   md.ns<-gsub("\\.Rmd",".md",rmd)
   p.content<-readLines(md.ns)
   p.content
@@ -37,7 +30,7 @@ knit_xwp<-function (input, title = "A post from R", ...,
   title = enc2utf8(title)
   action = match.arg(action)
   WPargs = list(content = list(description = content, title = title,
-                               ...), publish = publish)
+                               ...), appID = appID, publish = publish)
   if (action == "editPost")
     WPargs = c(postid = postid, WPargs)
   do.call(action, args = WPargs)
