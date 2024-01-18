@@ -9,14 +9,14 @@ This is a package that converts .Rmd files to .html and post to Wordpress.org bl
 \details{
 \tabular{ll}{
 Package: \tab knitXwp\cr
-Version: \tab 0.1.2b\cr
-License: \tab BSD\cr
-Imports: \tab RWordPress; rmarkdown; markdown\cr
+Version: \tab 0.1.3\cr
+License: \tab GNU\cr
+Imports: \tab XMLRPC; RWordPress; rmarkdown; markdown\cr
 Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
 }
 
 This is a tiny function library which solves a small rendering issue of
-the \code{\link{knit2wp}} function included in the package \pkg{knitr} by Yihui Xie
+the knit2wp() function included in the package \pkg{knitr} by Yihui Xie
 \url{https://yihui.org/knitr/}
 and depends on the yet not maintained, but working functions of \pkg{RWordPress} by
 Duncan T. Lang which publish the data via the wordpress rest-API of a
