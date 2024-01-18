@@ -1,9 +1,9 @@
 Package: knitXwp
 Type: Package
 Title: knit .Rmd & publish post to Wordpress
-Version: 0.1.4
+Version: 0.1.5
 Author: esteeschwarz
-Maintainer: esteeschwarz <yourself@somewhere.net>
+Maintainer: esteeschwarz <esteeschwarz@dh-index.org>
 Description: Knitting and posting .Rmd files to Wordpress self hosted blogs.
 License: BSD
 Imports: 
