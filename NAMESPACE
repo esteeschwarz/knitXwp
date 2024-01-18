@@ -5,3 +5,4 @@ import(RWordPress)
 exportPattern("^[[:alpha:]]+")
 
 export(knit_xwp)
+export(setblog)
