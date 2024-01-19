@@ -5,10 +5,17 @@ library("markdown")
 options(WordpressLogin = c(c(username='password')),
         WordpressURL = 'https://example.com/xmlrpc.php')
 
+backtop.css<-"
+<div>
+<style>
+.backtop {font-size:0.6em;}
+</style>
+</div>
+"
 
-knit_xwp<-function (input, apply.css=FALSE, keep.files=FALSE,title = "A post from R", ...,
+knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
-          postid = 0, publish = TRUE)
+          postid = 0, publish = TRUE, test = FALSE)
 {
 
   get.pid<-function(postid){
@@ -28,18 +35,31 @@ knit_xwp<-function (input, apply.css=FALSE, keep.files=FALSE,title = "A post fro
     m1<-grep("\\{#",p.content)
     if(sum(m1)>0)
       toc.cl<-gsub("\\(#","(#_pid_-",p.content[m1])
+      toc.cl
+    #toc.cl[1]<-paste0(toc.cl[])
     toc.cl<-gsub("\\{#","{#_pid_-",toc.cl)
     toc.cl<-gsub("_pid_",pid,toc.cl)
     toc.cl<-gsub("_pid_",pid,toc.cl)
     m2<-grep("\\{#.+?-toc-",toc.cl)
     if(sum(m2)>0)
       toc.cl[m2]<-gsub("\\{#.+}","",toc.cl[m2])
-    toc.cl<-gsub("_pid_",pid,toc.cl)
+      toc.cl[m2[1]]<-paste0(toc.cl[m2[1]],"{#toc-1}",collapse = "")
+    #toc.cl<-gsub("_pid_",pid,toc.cl)
+    toc.cl
+    m4<-grep("(\\{#)",toc.cl)
+    toc.cl[m4][2:length(m4)]<-gsub("(\\{#)",'[top](#toc-1){class="backtop"}\\1',toc.cl[m4][2:length(m4)])
+    toc.cl
     p.content[m1]<-toc.cl
+    p.content<-c(backtop.css,p.content)
     return(p.content)
   }
-
-  rmd<-input
+  get.git.md<-function(p.content){
+    m3<-grep("\\{#",p.content)
+    if(sum(m3)>0)
+      p.content[m3]<-gsub("\\{#.+?}","",p.content[m3])
+    return(p.content)
+  }
+  rmd<-file
   ext<-gsub(".*((\\.)(.*))","\\3",rmd)
   f.ns<-gsub("(.*)((\\.)(.*))","\\1",rmd)
   md.ren<-paste0(f.ns,".md")
@@ -51,18 +71,22 @@ knit_xwp<-function (input, apply.css=FALSE, keep.files=FALSE,title = "A post fro
     ifelse(keep.files==F,md.ns<-paste0(tempdir(),"/",f.ns,".md"),
            md.ns<-md.ren)
   p.content<-readLines(md.ns)
-  #p.content
   }
+  #p.content
   if(ext=="md")
     p.md<-readLines(rmd)
   pid<-get.pid(postid)
   p.md<-get.toc.unique(pid,p.content)
-  writeLines(p.md,md.ren)
+  #p.md
+  writeLines(p.md,"xwp-output.md")
+  if(git.out==T)
+    writeLines(get.git.md(p.content),md.ren)
+
   p.html<-mark(p.md)
   content<-p.html
   if(apply.css==T)
      content<-get.css(pid,"style.css",p.html)
-  writeLines(content,"output.html")
+  writeLines(content,"xwp-output.html")
   #on.exit(unlink(out))
 #  content = file_string(out)
   #content = mark(text = out)
@@ -82,5 +106,6 @@ knit_xwp<-function (input, apply.css=FALSE, keep.files=FALSE,title = "A post fro
                                ...), publish = publish)
   if (action == "editPost")
     WPargs = c(postid = postid, WPargs)
-  do.call(action, args = WPargs)
+  if(test==F)
+    do.call(action, args = WPargs)
 }
