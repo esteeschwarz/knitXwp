@@ -6,7 +6,7 @@ options(WordpressLogin = c(c(username='password')),
         WordpressURL = 'https://example.com/xmlrpc.php')
 
 
-knit_xwp<-function (input, apply.css=F, title = "A post from R", ...,
+knit_xwp<-function (input, apply.css=FALSE, keep.files=FALSE,title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
           postid = 0, publish = TRUE)
 {
@@ -42,16 +42,22 @@ knit_xwp<-function (input, apply.css=F, title = "A post from R", ...,
   rmd<-input
   ext<-gsub(".*((\\.)(.*))","\\3",rmd)
   f.ns<-gsub("(.*)((\\.)(.*))","\\1",rmd)
+  md.ren<-paste0(f.ns,".md")
+
   if(ext=="Rmd"){
-    render(rmd,output_dir = tempdir())
-  #md.ns<-gsub("\\.Rmd",".md",rmd)
-  md.ns<-paste0(tempdir(),"/",f.ns,".md")
+    ifelse(keep.files==F,
+           render(rmd,output_dir = tempdir()),
+           render(rmd))
+    ifelse(keep.files==F,md.ns<-paste0(tempdir(),"/",f.ns,".md"),
+           md.ns<-md.ren)
   p.content<-readLines(md.ns)
+  #p.content
   }
   if(ext=="md")
     p.md<-readLines(rmd)
   pid<-get.pid(postid)
   p.md<-get.toc.unique(pid,p.content)
+  writeLines(p.md,md.ren)
   p.html<-mark(p.md)
   content<-p.html
   if(apply.css==T)
