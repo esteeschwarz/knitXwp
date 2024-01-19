@@ -4,12 +4,12 @@
 \docType{package}
 \title{Knit .Rmd to Wordpress blogs}
 \description{
-This is a package that converts .Rmd files to .html and post to Wordpress.org blogs using \pkg{RWordPress} by duncantl.
+This is a package that converts .md/.Rmd files to .html and post to Wordpress.org blogs using \pkg{RWordPress} by duncantl.
 }
 \details{
 \tabular{ll}{
 Package: \tab knitXwp\cr
-Version: \tab 0.1.4\cr
+Version: \tab 0.1.4b\cr
 License: \tab GNU\cr
 Imports: \tab XMLRPC; RWordPress; rmarkdown; markdown\cr
 Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
