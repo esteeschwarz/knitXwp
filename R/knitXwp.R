@@ -14,7 +14,7 @@ knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, ti
 backtop.css<-function(pid){
     sprintf('<div id="%s-top-1">
 <style>
-.backtop {
+.backtop a{
 font-size:24px;
 text-decoration:none;
 }
