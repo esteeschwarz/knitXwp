@@ -5,19 +5,24 @@ library("markdown")
 options(WordpressLogin = c(c(username='password')),
         WordpressURL = 'https://example.com/xmlrpc.php')
 
-backtop.css<-"
-<div>
-<style>
-.backtop {font-size:0.6em;}
-</style>
-</div>
-"
-
+#backtop.css(2085)
 knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
           postid = 0, publish = TRUE, test = FALSE)
 {
+### style of the back-to-top button of the section headers
+backtop.css<-function(pid){
+    sprintf('<div id="%s-top-1">
+<style>
+.backtop {
+font-size:24px;
+text-decoration:none;
+}
+</style>
+</div>',pid)
+  }
 
+### get unique id for section entries
   get.pid<-function(postid){
     ns.rnd<-c(sample(letters,26),sample(0:9,9))
     ifelse(postid>0,pid<-postid,
@@ -25,34 +30,50 @@ knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, ti
 
   }
 
+### apply css to div of post
   get.css<-function(pid,template,p.html){
     css<-paste0(readLines("style.css"),collapse ="")
     css<-paste0("#knitxwp-",pid," ",css,collapse = "")
     css<-paste0("<style>",css,"</style>",collapse = "")
     h.content<-paste0(css,'<div id="knitxwp-',pid,'">',p.html,'</div>',collapse = "")
   }
+
+### apply ids and backtotop button to section entries and toc
   get.toc.unique<-function(pid,p.content){
     m1<-grep("\\{#",p.content)
+   # p.content[m1]
     if(sum(m1)>0)
-      toc.cl<-gsub("\\(#","(#_pid_-",p.content[m1])
-      toc.cl
+      toc.cl<-gsub("\\(#(.+?\\))","(#_pid_-\\1",p.content[m1])
+    #  toc.cl
     #toc.cl[1]<-paste0(toc.cl[])
-    toc.cl<-gsub("\\{#","{#_pid_-",toc.cl)
-    toc.cl<-gsub("_pid_",pid,toc.cl)
-    toc.cl<-gsub("_pid_",pid,toc.cl)
-    m2<-grep("\\{#.+?-toc-",toc.cl)
-    if(sum(m2)>0)
-      toc.cl[m2]<-gsub("\\{#.+}","",toc.cl[m2])
-      toc.cl[m2[1]]<-paste0(toc.cl[m2[1]],"{#toc-1}",collapse = "")
+    toc.cl<-gsub("\\{#(.+?)[ \\}].*",'{id="_pid_-\\1"}',toc.cl,)
+    #toc.cl
     #toc.cl<-gsub("_pid_",pid,toc.cl)
-    toc.cl
-    m4<-grep("(\\{#)",toc.cl)
-    toc.cl[m4][2:length(m4)]<-gsub("(\\{#)",'[top](#toc-1){class="backtop"}\\1',toc.cl[m4][2:length(m4)])
-    toc.cl
+    toc.cl<-gsub("_pid_",pid,toc.cl)
+    #toc.cl
+    m2<-grep("\\{id=.+?-toc-",toc.cl)
+    if(sum(m2)>0)
+      toc.cl[m2]<-gsub("\\{id=.+?\\}","",toc.cl[m2])
+    #toc.cl
+    #  toc.cl[m2[1]]<-paste0(toc.cl[m2[1]],"{#toc-1}",collapse = "")
+    #toc.cl<-gsub("_pid_",pid,toc.cl)
+    #toc.cl
+    top.div<-sprintf('#%s-top-1',pid)
+    top.ref<-sprintf('<a class="backtop" href="%s">&#8682;</a>',top.div)
+    top.repl<-sprintf('%s \\1',top.ref)
+    #top.repl
+    #top.ref
+    m4<-grep("(\\{id)",toc.cl)
+    #gsub("(\\{id.+?\\})",top.repl,toc.cl[m4][2:length(m4)])
+    toc.cl[m4][2:length(m4)]<-gsub("(\\{id.+?\\})",top.repl,toc.cl[m4][2:length(m4)])
+
+    #toc.cl
     p.content[m1]<-toc.cl
-    p.content<-c(backtop.css,p.content)
+    p.content<-c(backtop.css(pid),"\n",p.content)
     return(p.content)
   }
+
+### get clean md for git
   get.git.md<-function(p.content){
     m3<-grep("\\{#",p.content)
     if(sum(m3)>0)
@@ -83,6 +104,8 @@ knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, ti
     writeLines(get.git.md(p.content),md.ren)
 
   p.html<-mark(p.md)
+  #p.html
+ # writeLines(p.html,"temphtm.html")
   content<-p.html
   if(apply.css==T)
      content<-get.css(pid,"style.css",p.html)
