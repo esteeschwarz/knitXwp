@@ -51,5 +51,8 @@ get.toc.unique<-function(pid,p.content){
   }
 p.un<-get.toc.unique(0,p.content)
 p.un
+library(markdown)
+mark("README.md",yaml_front_matter("readme.yml"))
+mdo<-yaml_front_matter("readme.yml")
+mark("README.md",options = mdo)
 
-mark("xwp-output.md")

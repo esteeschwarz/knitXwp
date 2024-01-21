@@ -2,8 +2,8 @@ library("rmarkdown")
 library("RWordPress")
 library("markdown")
 
-options(WordpressLogin = c(c(username='password')),
-        WordpressURL = 'https://example.com/xmlrpc.php')
+# options(WordpressLogin = c(c(username='password')),
+#         WordpressURL = 'https://example.com/xmlrpc.php')
 
 #backtop.css(2085)
 knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, title = "A post from R", ...,
@@ -80,6 +80,14 @@ text-decoration:none;
       p.content[m3]<-gsub("\\{#.+?}","",p.content[m3])
     return(p.content)
   }
+
+  get.png.src<-function(md){
+    adasrc<-"https://ada-sub.dh-index.org/blog/wp-content/uploads/"
+    mdsrc<-paste0(f.ns,"_files/figure-markdown_phpextra/")
+    m<-grep(mdsrc,md)
+    md[m]<-gsub(mdsrc,adasrc,md[m])
+    return(md)
+  }
   rmd<-file
   ext<-gsub(".*((\\.)(.*))","\\3",rmd)
   f.ns<-gsub("(.*)((\\.)(.*))","\\1",rmd)
@@ -97,6 +105,8 @@ text-decoration:none;
   if(ext=="md")
     p.md<-readLines(rmd)
   pid<-get.pid(postid)
+  md.png<-get.png.src(p.content)
+  p.content<-md.png
   p.md<-get.toc.unique(pid,p.content)
   #p.md
   writeLines(p.md,"xwp-output.md")

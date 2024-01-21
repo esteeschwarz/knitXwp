@@ -134,6 +134,21 @@ barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",yla
 ```
 
 
+#### semasiological analysis
+```{r echo=F}
+kable(plotlist$eval.semas[,1:9])
+```
+
+
+```{r fig-04-sema,echo=F, fig.cap="semasiological log.like of near synonymes to make"}
+    par(las=3)
+#barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+ #   barplot(plotlist$eval.semas$COLL.STR.LOGL~plotlist$eval.semas$ns,xlab = "",ylab = "collex.log.like")
+#plot.plots("alt.2")
+
+```
+
+
 ---------
 
 # B: references
