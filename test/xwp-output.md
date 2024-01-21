@@ -62,7 +62,7 @@ cf. (Mehl 2021, 11–14)
 | light    |         321 |        353 |        381 |
 
 <figure>
-<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/fig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
+<img src="https://ada-sub.dh-index.org/blog/fig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
 <figcaption aria-hidden="true">distribution of lemma /make/ over corpora. ICE data from study.</figcaption>
 </figure>
 
@@ -82,12 +82,12 @@ this contrast includes made up alternatives to /make/ that Mehl defined in his s
 semantic alternatives
 
 <figure>
-<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/fig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
+<img src="https://ada-sub.dh-index.org/blog/fig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
 <figcaption aria-hidden="true">proportion of semantic alternatives to concrete /make/ in SBC</figcaption>
 </figure>
 
 <figure>
-<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/fig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
+<img src="https://ada-sub.dh-index.org/blog/fig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
 <figcaption aria-hidden="true">proportion of semantic alternatives, only equivalent meaning of alternates</figcaption>
 </figure>
 
@@ -110,6 +110,11 @@ semantic alternatives
 | 1862 | roll      | tamale    |   8 |   5 |   1 |   0 | attr  |      10.19627 | \*\*       |
 | 2626 | record    | trip      |  13 |   8 |   1 |   0 | attr  |       8.15687 | \*\*       |
 | 3307 | record    | game      |  13 |  16 |   1 |   0 | attr  |       6.71671 | \*\*       |
+
+<figure>
+<img src="https://ada-sub.dh-index.org/blog/fig-04-sema-1.png" alt="semasiological log.like of near synonymes to make" />
+<figcaption aria-hidden="true">semasiological log.like of near synonymes to make</figcaption>
+</figure>
 
 ------------------------------------------------------------------------
 

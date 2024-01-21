@@ -82,7 +82,9 @@ text-decoration:none;
   }
 
   get.png.src<-function(md){
-    adasrc<-"https://ada-sub.dh-index.org/blog/wp-content/uploads/"
+    adasrc<-options("WordpressURL")
+    adasrc<-gsub("xmlrpc.php","",adasrc)
+
     mdsrc<-paste0(f.ns,"_files/figure-markdown_phpextra/")
     m<-grep(mdsrc,md)
     md[m]<-gsub(mdsrc,adasrc,md[m])
