@@ -80,10 +80,24 @@ text-decoration:none;
       p.content[m3]<-gsub("\\{#.+?}","",p.content[m3])
     return(p.content)
   }
-
+  test.upload<-function(file){
+    #file.txt<-"this is just a test upload txt from knitXwp"
+    ada.uploads<-uploadFile(what=file)
+  }
   get.png.src<-function(md){
     adasrc<-options("WordpressURL")
-    adasrc<-gsub("xmlrpc.php","",adasrc)
+    testfile<-"knitXwp-test"
+    test.up<-paste0(testfile,".txt")
+    ada.uploads<-test.upload(test.up)
+    repl<-ada.uploads$url
+    repl
+    regx<-paste0(testfile,".*")
+    regx
+    repl
+    repl<-gsub(regx,"",repl)
+    repl
+    adasrc<-repl
+#    adasrc<-gsub("xmlrpc.php","wp-content/uploads/",adasrc) # TODO: get uploads folder from file upload
 
     mdsrc<-paste0(f.ns,"_files/figure-markdown_phpextra/")
     m<-grep(mdsrc,md)
