@@ -12,15 +12,9 @@ knit_xwp<-function (file, apply.css=FALSE, keep.files=FALSE, git.out = FALSE, ti
 {
 ### style of the back-to-top button of the section headers
 backtop.css<-function(pid){
-    sprintf('<div id="%s-top-1">
-<style>
-.backtop a{
-font-size:24px;
-text-decoration:none;
+sprintf('<div id="%s-top-1"><style>.backtop a{font-size:24px;text-decoration:none;}</style></div>', pid )
 }
-</style>
-</div>',pid)
-  }
+#backtop.css(0)
 
 ### get unique id for section entries
   get.pid<-function(postid){
@@ -80,28 +74,34 @@ text-decoration:none;
       p.content[m3]<-gsub("\\{#.+?}","",p.content[m3])
     return(p.content)
   }
-  test.upload<-function(file){
-    #file.txt<-"this is just a test upload txt from knitXwp"
-    ada.uploads<-uploadFile(what=file)
-  }
+  # test.upload<-function(file){
+  #   #file.txt<-"this is just a test upload txt from knitXwp"
+  #   ada.uploads<-uploadFile("knitXwp-filt.txt")
+  #   ada.uploads$attachment_id
+  #   ada.uploads$url
+  # }
   get.png.src<-function(md){
-    adasrc<-options("WordpressURL")
-    testfile<-"knitXwp-test"
-    test.up<-paste0(testfile,".txt")
-    ada.uploads<-test.upload(test.up)
-    repl<-ada.uploads$url
-    repl
-    regx<-paste0(testfile,".*")
-    regx
-    repl
-    repl<-gsub(regx,"",repl)
-    repl
-    adasrc<-repl
+    # adasrc<-options("WordpressURL")
+    # testfile<-"knitXwp-test"
+    # test.up<-paste0(testfile,".txt")
+    # ada.uploads<-test.upload(test.up)
+    # repl<-ada.uploads$url
+    # repl
+    # regx<-paste0(testfile,".*")
+    # regx
+    # repl
+    # repl<-gsub(regx,"",repl)
+    # repl
+    # adasrc<-repl
 #    adasrc<-gsub("xmlrpc.php","wp-content/uploads/",adasrc) # TODO: get uploads folder from file upload
-
-    mdsrc<-paste0(f.ns,"_files/figure-markdown_phpextra/")
+    gitsrc<-"https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/pub/wp/"
+#    gitsrc<-"https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/pub/wp/README_files/figure-markdown_phpextra/"
+  pngfolder<-"_files/figure-markdown_phpextra/"
+      mdsrc<-paste0(f.ns,pngfolder)
+    gitpng<-paste0(gitsrc,mdsrc)
+    gitpng
     m<-grep(mdsrc,md)
-    md[m]<-gsub(mdsrc,adasrc,md[m])
+    md[m]<-gsub(mdsrc,gitpng,md[m])
     return(md)
   }
   rmd<-file
@@ -121,15 +121,19 @@ text-decoration:none;
   if(ext=="md")
     p.md<-readLines(rmd)
   pid<-get.pid(postid)
-  md.png<-get.png.src(p.content)
-  p.content<-md.png
   p.md<-get.toc.unique(pid,p.content)
-  #p.md
-  writeLines(p.md,"xwp-output.md")
+  p.content<-p.md
   if(git.out==T)
     writeLines(get.git.md(p.content),md.ren)
+  md.png<-get.png.src(p.content)
+  p.content<-md.png
+  #p.md
+  writeLines(p.content,"xwp-output.md")
+  mdo<-yaml_front_matter("readme.yml")
+  #p.html<-mark("README.md",options = mdo)
+  p.html<-mark(p.content,options = mdo)
 
-  p.html<-mark(p.md)
+#  p.html<-mark(p.md)
   #p.html
  # writeLines(p.html,"temphtm.html")
   content<-p.html
