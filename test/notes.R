@@ -55,4 +55,5 @@ library(markdown)
 mark("README.md",yaml_front_matter("readme.yml"))
 mdo<-yaml_front_matter("readme.yml")
 mark("README.md",options = mdo)
-
+apply.yaml<-F
+apply.yaml<-"knitXwp-global.yml"
