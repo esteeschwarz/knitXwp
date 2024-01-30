@@ -15,6 +15,14 @@ backtop.css<-function(pid){
 sprintf('<div id="%s-top-1"><style>.backtop a{font-size:24px;text-decoration:none;}</style></div>', pid )
 }
 
+get.yaml<-function(file){
+  yaml.post<-yaml_front_matter(file)
+  postid<-yaml.post$post$postid
+  action<-yaml.post$post$action
+  publish<-yaml.post$post$publish
+  mt_keywords<-yaml.post$post$tag
+  categories<-yaml.post$post$categories
+}
 ### get unique id for section entries
   get.pid<-function(postid){
     ns.rnd<-c(sample(letters,26),sample(0:9,9))
