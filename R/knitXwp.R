@@ -20,8 +20,10 @@ get.yaml<-function(file){
   postid<-yaml.post$post$postid
   action<-yaml.post$post$action
   publish<-yaml.post$post$publish
-  mt_keywords<-yaml.post$post$tag
-  categories<-yaml.post$post$categories
+  e1<-expression(mt_keywords<-c(yaml.post$post$tag))
+  e2<-expression(categories<-c(yaml.post$post$categories))
+  e1
+  e2
 }
 ### get unique id for section entries
   get.pid<-function(postid){
