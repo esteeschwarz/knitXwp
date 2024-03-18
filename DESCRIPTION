@@ -1,7 +1,7 @@
 Package: knitXwp
 Type: Package
 Title: knit & publish post to Wordpress
-Version: 0.1.5
+Version: 0.1.6
 Author: esteeschwarz
 Maintainer: esteeschwarz <estee@dh-index.org>
 Description: Knitting .md/.Rmd and posting to Wordpress self hosted blogs.
