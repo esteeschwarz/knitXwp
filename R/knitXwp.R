@@ -127,6 +127,7 @@ get.yaml<-function(file){
   pngfolder<-"_files/figure-markdown_phpextra/"
   #mdsrc<-"README_files/figure-markdown_phpextra/"
   #png.array<-c(1,2,3,4)
+  png.array<-update.img
   mdsrc<-paste0(f.ns,pngfolder)
   pngs<-list.files(mdsrc)
   png.array.x<-1:length(pngs)
