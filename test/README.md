@@ -52,7 +52,7 @@ cf. (Mehl 2021, 11–14)
 | light    |         321 |        353 |        381 |
 
 <figure>
-<img src="README_files/figure-markdown_phpextra/fig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
+<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/knitXwp-test-1.txtfig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
 <figcaption aria-hidden="true">distribution of lemma /make/ over corpora. ICE data from study.</figcaption>
 </figure>
 
@@ -72,13 +72,38 @@ this contrast includes made up alternatives to /make/ that Mehl defined in his s
 semantic alternatives
 
 <figure>
-<img src="README_files/figure-markdown_phpextra/fig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
+<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/knitXwp-test-1.txtfig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
 <figcaption aria-hidden="true">proportion of semantic alternatives to concrete /make/ in SBC</figcaption>
 </figure>
 
 <figure>
-<img src="README_files/figure-markdown_phpextra/fig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
+<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/knitXwp-test-1.txtfig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
 <figcaption aria-hidden="true">proportion of semantic alternatives, only equivalent meaning of alternates</figcaption>
+</figure>
+
+#### 1.2.3.3 semasiological analysis 
+
+|      | SLOT1     | SLOT2     | fS1 | fS2 | OBS | EXP | ASSOC | COLL.STR.LOGL | SIGNIF     |
+|:-----|:---------|:---------|----:|----:|----:|----:|:------|-------------:|:-------|
+| 137  | finish    | afghan    |  13 |   2 |   2 |   0 | attr  |      28.51461 | \*\*\*\*\* |
+| 654  | Filled    | cookie    |   1 |   6 |   1 |   0 | attr  |      15.81813 | \*\*\*\*   |
+| 924  | create    | Adam      |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     |
+| 928  | create    | rift      |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     |
+| 930  | record    | Simpsons  |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     |
+| 1337 | shovel    | food      |   1 |  34 |   1 |   0 | attr  |      12.20185 | \*\*\*     |
+| 1338 | Unsweeten | food      |   1 |  34 |   1 |   0 | attr  |      12.20185 | \*\*\*     |
+| 1476 | filling   | stuff     |   1 |  46 |   1 |   0 | attr  |      11.58948 | \*\*\*     |
+| 1518 | create    | cause     |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     |
+| 1519 | create    | committee |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     |
+| 1520 | create    | condition |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     |
+| 1784 | bake      | bread     |   5 |   7 |   1 |   0 | attr  |      10.48243 | \*\*       |
+| 1862 | roll      | tamale    |   8 |   5 |   1 |   0 | attr  |      10.19627 | \*\*       |
+| 2626 | record    | trip      |  13 |   8 |   1 |   0 | attr  |       8.15687 | \*\*       |
+| 3307 | record    | game      |  13 |  16 |   1 |   0 | attr  |       6.71671 | \*\*       |
+
+<figure>
+<img src="https://ada-sub.dh-index.org/blog/wp-content/uploads/knitXwp-test-1.txtfig-04-sema-1.png" alt="semasiological log.like of near synonymes to make" />
+<figcaption aria-hidden="true">semasiological log.like of near synonymes to make</figcaption>
 </figure>
 
 ------------------------------------------------------------------------

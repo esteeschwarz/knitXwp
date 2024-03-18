@@ -10,17 +10,22 @@
 setblog(username,password,adress='https://example.com')
 
 knit_xwp(file,
-apply.css = FALSE, keep.files = FALSE, git.out = FALSE,
+apply.yaml = FALSE, apply.css = FALSE, update.img = FALSE,
+keep.files = FALSE, git.out = FALSE,
 title = "A post from R", ...,
           action = c("newPost", "editPost", "newPage"),
-          postid, publish = TRUE, test = FALSE)
+          postid = 0, publish = TRUE, test = FALSE)
 }
  \arguments{
   \item{username}{username, expected character}
   \item{password}{password, expected character}
   \item{adress}{blog URL, expected character}
   \item{file}{the filename of the .Rmd or .md input file in the working directory}
-  \item{apply.css}{(default=FALSE), you can specify a \code{style.css} file in the working directory containing rules to apply to the post. a \code{div} element with \code{id=postid} will be created with the according CSS rules }
+  \item{apply.yaml}{(default=FALSE), you can specify a \code{.yml} file in the working directory
+  containing rules to apply to the post.}
+  \item{apply.css}{(default=FALSE), you can specify a \code{style.css} file in the working directory
+  containing rules to apply to the post. a \code{div} element with \code{id=postid} will be created with the according CSS rules }
+  \item{update.img}{(default=FALSE), option to update images in a post edit}
   \item{keep.files}{wether to keep figures and md output, if default = FALSE, these will be stored in a temporary directory}
   \item{git.out}{set TRUE if you want to keep a markdown for github in the working dir}
   \item{title}{the post title if new post}

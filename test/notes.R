@@ -51,5 +51,9 @@ get.toc.unique<-function(pid,p.content){
   }
 p.un<-get.toc.unique(0,p.content)
 p.un
-
-mark("xwp-output.md")
+library(markdown)
+mark("README.md",yaml_front_matter("readme.yml"))
+mdo<-yaml_front_matter("readme.yml")
+mark("README.md",options = mdo)
+apply.yaml<-F
+apply.yaml<-"knitXwp-global.yml"
