@@ -72,7 +72,7 @@ get.yaml<-function(file){
     return(ada.uploads)
   }
  # f<-1
-  png.array<-c(1,2)
+  #png.array<-c(1,2)
   get.png.src<-function(md,png.array=update.img){
   pngfolder<-"_files/figure-markdown_phpextra/"
   #mdsrc<-"README_files/figure-markdown_phpextra/"
@@ -134,6 +134,8 @@ get.yaml<-function(file){
   png.label.cpt
   png.size.cpt<-file.size(png.label.cpt)
   png.size.int<-sum(png.size.cpt)
+  if (png.array.x[2]==0)
+    png.size.int<-0
   md.png<-p.content
   if(png.size.int>100000|sum(length(pngs)>0&png.array!=F)==length(png.array))
     md.png<-get.png.src(p.content)
