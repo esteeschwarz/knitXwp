@@ -12,7 +12,7 @@ Package: \tab knitXwp\cr
 Version: \tab 0.1.6\cr
 License: \tab GNU\cr
 Imports: \tab XMLRPC; RWordPress; rmarkdown; markdown\cr
-Built: \tab R 4.2.0; ; 2024-01-17 13:29:36 UTC; unix\cr
+Built: \tab R 4.3.0; ; 2024-03-18 17:54:00 UTC+1; unix\cr
 }
 
 This is a tiny function library which solves a small rendering issue of
