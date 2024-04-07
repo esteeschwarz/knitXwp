@@ -43,10 +43,11 @@ get.yaml<-function(file){
 
 ### apply ids and backtotop button to section entries and toc
   get.toc.unique<-function(pid,p.content){
+    toc.cl<-p.content
     m1<-grep("\\{#",p.content)
     if(sum(m1)>0)
       toc.cl<-gsub("\\(#(.+?\\))","(#_pid_-\\1",p.content[m1])
-    toc.cl<-gsub("\\{#(.+?)[ \\}].*",'{id="_pid_-\\1"}',toc.cl,)
+    toc.cl<-gsub("\\{#(.+?)[ \\}].*",'{id="_pid_-\\1"}',toc.cl)
     toc.cl<-gsub("_pid_",pid,toc.cl)
     m2<-grep("\\{id=.+?-toc-",toc.cl)
     if(sum(m2)>0)
