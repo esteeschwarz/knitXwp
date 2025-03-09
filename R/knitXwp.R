@@ -120,7 +120,7 @@ get.yaml<-function(file){
   if(ext=="md")
     p.md<-readLines(rmd)
   pid<-get.pid(postid)
-  p.md<-get.toc.unique(pid,p.content)
+  p.md<-get.toc.unique(pid,p.md)
   p.content<-p.md
   if(git.out==T)
     writeLines(get.git.md(p.content),md.ren)
